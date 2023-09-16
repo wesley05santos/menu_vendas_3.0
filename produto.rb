@@ -1,12 +1,8 @@
 # require_relative 'menu.rb'
 
 class Produto
-    @@produtos = [{codigo: 1, nome: 'salada', preco: 14.99}, 
-        {codigo: 2, nome: 'fritas', preco: 24.99},
-        {codigo: 3, nome: 'hamburguer', preco: 29.99},
-        {codigo: 4, nome: 'bebida', preco: 10.90},
-        {codigo: 5, nome: 'sobremesa', preco: 7.00}]
-    @@codigo = 1   
+    @@produtos = []
+    @@codigo = 1  
 
     
     def self.input_nome
@@ -16,7 +12,7 @@ class Produto
 
     def self.input_preco
         puts "Digite o preço do produto:"
-        gets.chomp.to_f
+        gets.chomp.gsub(",", ".").to_f
     end
 
     def self.cadastra_produto
